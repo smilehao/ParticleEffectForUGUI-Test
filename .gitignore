@@ -1,34 +1,50 @@
+```
 # Build artifacts
-*.meta
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.class
+*.o
+*.obj
+*.out
+*.lib
+*.a
+
+# Unity specific
 Library/
 Temp/
 Obj/
 Build/
-Dist/
-
-# User-specific files
-.vs/
-.userprefs
-*.user
-*.suo
-*.userosscache
-*.unityproj
-
-# Environment specific
-.env
-.env.local
-*.env.*
-
-# Logs
+Builds/
+*.unitypackage
+[Ll]ogs/
 *.log
-crashlytics-build.properties
+
+# Dependencies
+node_modules/
+Packages/LocalPackages/
 
 # OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
-desktop.ini
 
-# Dependency directories
-node_modules/
-Pods/
-vendor/
+# Environment variables
+.env
+.env.local
+.env.*
+!.env.example
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+```
