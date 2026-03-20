@@ -28,7 +28,7 @@ namespace Coffee.UIExtensions
                     for (var j = 0; j < particles.Count; j++)
                     {
                         var ps = particles[j];
-                        if (ps && ps.isPlaying && ps.emission.enabled)
+                        if (ps && ps.emission.enabled && ps.particleCount > 0)
                         {
                             count += ps.particleCount;
                         }
