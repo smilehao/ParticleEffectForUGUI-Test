@@ -187,10 +187,9 @@ namespace Coffee.UIExtensions
             if (canvas == null)
                 return;
 
-            var graphics = InternalListPool<Graphic>.Rent();
+            var graphics = new List<Graphic>();
             canvas.GetComponentsInChildren<Graphic>(true, graphics);
             _canvasGraphicCount = graphics.Count;
-            InternalListPool<Graphic>.Return(ref graphics);
         }
 
         /// <summary>

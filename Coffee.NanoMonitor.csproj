@@ -618,6 +618,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Coffee.UIParticle.csproj">
+      <Project>{4ab8af59-f2f3-e1e2-9dc1-56500ea708ef}</Project>
+      <Name>Coffee.UIParticle</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

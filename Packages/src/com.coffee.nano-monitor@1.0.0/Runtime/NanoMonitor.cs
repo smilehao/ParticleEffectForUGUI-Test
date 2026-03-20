@@ -166,7 +166,7 @@ namespace Coffee.NanoMonitor
 
             if (m_Time)
             {
-                m_Time.SetText("Time:{0,3}", (int)Time.realtimeSinceStartup);
+                m_Time.SetText("Time:{0,3:F2}", Time.deltaTime * 1000);
             }
 
             if (m_Fps)
@@ -207,32 +207,32 @@ namespace Coffee.NanoMonitor
 
             if (m_CanvasGraphics)
             {
-                m_CanvasGraphics.SetText("Canvas Graphics:{0,6}", Coffee.UIExtensions.UIParticleProfiler.canvasGraphicCount);
+                m_CanvasGraphics.SetText("Graphics:{0,2}", Coffee.UIExtensions.UIParticleProfiler.canvasGraphicCount);
             }
 
             if (m_CanvasRebatchTime)
             {
-                m_CanvasRebatchTime.SetText("Rebatch(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.canvasRebatchTimeMs);
+                m_CanvasRebatchTime.SetText("Rebatch:{0,5:F2}", Coffee.UIExtensions.UIParticleProfiler.canvasRebatchTimeMs);
             }
 
             if (m_CPUTimeTotal)
             {
-                m_CPUTimeTotal.SetText("CPU Total(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.totalTimeMs);
+                m_CPUTimeTotal.SetText("Total:{0,3:F2}", Coffee.UIExtensions.UIParticleProfiler.totalTimeMs);
             }
 
             if (m_CPUTimeBake)
             {
-                m_CPUTimeBake.SetText("  Bake(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.bakeMeshTimeMs);
+                m_CPUTimeBake.SetText("Bake:{0,3:F2}", Coffee.UIExtensions.UIParticleProfiler.bakeMeshTimeMs);
             }
 
             if (m_CPUTimeCombine)
             {
-                m_CPUTimeCombine.SetText("  Combine(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.combineMeshTimeMs);
+                m_CPUTimeCombine.SetText("Combine:{0,3:F2}", Coffee.UIExtensions.UIParticleProfiler.combineMeshTimeMs);
             }
 
             if (m_CPUTimeSetMesh)
             {
-                m_CPUTimeSetMesh.SetText("  SetMesh(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.setMeshTimeMs);
+                m_CPUTimeSetMesh.SetText("SetMesh:{0,3:F2}", Coffee.UIExtensions.UIParticleProfiler.setMeshTimeMs);
             }
 
             foreach (var item in _customMonitorItems)

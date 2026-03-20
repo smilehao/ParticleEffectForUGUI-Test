@@ -59,6 +59,7 @@
      <Compile Include="Packages\src\com.coffee.ui-particle@4.11.4\Runtime\UIParticleUpdater.cs" />
      <Compile Include="Packages\src\com.coffee.ui-particle@4.11.4\Runtime\Internal\Extensions\Vector3Extensions.cs" />
      <Compile Include="Packages\src\com.coffee.ui-particle@4.11.4\Runtime\Internal\Extensions\CanvasExtensions.cs" />
+     <Compile Include="Packages\src\com.coffee.ui-particle@4.11.4\Runtime\UIParticleProfiler.cs" />
      <Compile Include="Packages\src\com.coffee.ui-particle@4.11.4\Runtime\Internal\Extensions\Color32Extensions.cs" />
      <Compile Include="Packages\src\com.coffee.ui-particle@4.11.4\Runtime\Internal\Utilities\ObjectPool.cs" />
      <None Include="Packages\src\com.coffee.ui-particle@4.11.4\Runtime\Coffee.UIParticle.asmdef" />
