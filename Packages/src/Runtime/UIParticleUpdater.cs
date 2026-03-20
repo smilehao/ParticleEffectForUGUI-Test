@@ -14,6 +14,30 @@ namespace Coffee.UIExtensions
 
         public static int uiParticleCount => s_ActiveParticles.Count;
 
+        public static int totalParticleCount
+        {
+            get
+            {
+                var count = 0;
+                for (var i = 0; i < s_ActiveParticles.Count; i++)
+                {
+                    var uip = s_ActiveParticles[i];
+                    if (!uip || !uip.canvas) continue;
+                    
+                    var particles = uip.particles;
+                    for (var j = 0; j < particles.Count; j++)
+                    {
+                        var ps = particles[j];
+                        if (ps && ps.isPlaying && ps.emission.enabled)
+                        {
+                            count += ps.particleCount;
+                        }
+                    }
+                }
+                return count;
+            }
+        }
+
         public static void Register(UIParticle particle)
         {
             if (!particle) return;
