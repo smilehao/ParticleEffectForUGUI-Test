@@ -1,19 +1,5 @@
 {
   "dependencies": {
-    "com.coffee.development": {
-      "version": "https://github.com/mob-sakai/Coffee.Internal.git?path=Packages/Development",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "0b582a7eac23caaeebe5ade9dc519a911d8342e6"
-    },
-    "com.coffee.minimal-resource": {
-      "version": "https://github.com/mob-sakai/Coffee.Internal.git?path=Packages/MinimalResource",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "0b582a7eac23caaeebe5ade9dc519a911d8342e6"
-    },
     "com.coffee.nano-monitor": {
       "version": "file:src/com.coffee.nano-monitor@1.0.0",
       "depth": 0,

@@ -40,11 +40,11 @@
     <Analyzer Include="C:\Program Files\Unity 2022.3.33f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Samples\UI Particle\4.11.4\Demo\Scripts\UIParticle_Demo_UIParticleController.cs" />
-     <Compile Include="Assets\Samples\UI Particle\4.11.4\Demo\Scripts\UIParticle_Demo.cs" />
-     <Compile Include="Assets\Samples\UI Particle\4.11.4\Demo\Scripts\CopyItemOnStart.cs" />
-     <Compile Include="Assets\Samples\UI Particle\4.11.4\Demo\Scripts\UIElementDragger.cs" />
-     <None Include="Assets\Samples\UI Particle\4.11.4\Demo\Scripts\Coffee.UIParticle.Demo.asmdef" />
+     <Compile Include="Assets\Demo\UIParticle Demo\Scripts\UIParticle_Demo_UIParticleController.cs" />
+     <Compile Include="Assets\Demo\UIParticle Demo\Scripts\UIParticle_Demo.cs" />
+     <Compile Include="Assets\Demo\UIParticle Demo\Scripts\UIElementDragger.cs" />
+     <Compile Include="Assets\Demo\UIParticle Demo\Scripts\CopyItemOnStart.cs" />
+     <None Include="Assets\Demo\UIParticle Demo\Scripts\Coffee.UIParticle.Demo.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity 2022.3.33f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
