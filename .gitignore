@@ -1,5 +1,50 @@
-The file name appears to be encoded in octal escape sequences. Decoding `"\347\211\271\346\225\210\346\265\213\350\257\225\346\226\207\346\241\243.md"` gives us a Chinese filename "特效测试文档.md" which translates to "Special Effects Test Document.md". This is a markdown source file.
+```
+# Build artifacts
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.class
+*.o
+*.obj
+*.out
+*.lib
+*.a
 
-Since the added file is a regular markdown document (source content), and there are no build artifacts, dependencies, or temporary files in the changes, no entries need to be added to the .gitignore file.
+# Unity specific
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+*.unitypackage
+[Ll]ogs/
+*.log
 
-(empty — output nothing)
+# Dependencies
+node_modules/
+Packages/LocalPackages/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*
+!.env.example
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+```
