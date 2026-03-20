@@ -91,6 +91,9 @@ namespace Coffee.UIExtensions
             if (s_FrameCount == Time.frameCount) return;
             s_FrameCount = Time.frameCount;
 
+            // 开始帧统计
+            UIParticleProfiler.BeginFrame();
+
             // Simulate -> Primary
             for (var i = 0; i < s_ActiveParticles.Count; i++)
             {
@@ -126,6 +129,9 @@ namespace Coffee.UIExtensions
             {
                 s_ActiveAttractors[i].Attract();
             }
+
+            // 结束帧统计
+            UIParticleProfiler.EndFrame();
         }
 
         public static void GetGroupedRenderers(int groupId, int index, List<UIParticleRenderer> results)

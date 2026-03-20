@@ -344,6 +344,8 @@ namespace Coffee.UIExtensions
 
             // Bake mesh.
             Profiler.BeginSample("[UIParticleRenderer] Bake Mesh");
+            var bakeStartTime = Time.realtimeSinceStartupAsDouble;
+            
             s_CombineInstances[0].mesh.Clear(false);
 
             // Assertion failed on expression: 'ps->array_size()' #278
@@ -373,6 +375,9 @@ namespace Coffee.UIExtensions
 #endif
             }
 
+            var bakeEndTime = Time.realtimeSinceStartupAsDouble;
+            UIParticleProfiler.AddBakeMeshTime((bakeEndTime - bakeStartTime) * 1000.0);
+
             // Too many vertices to render.
             if (65535 <= s_CombineInstances[0].mesh.vertexCount)
             {
@@ -389,6 +394,8 @@ namespace Coffee.UIExtensions
 
             // Combine mesh to transform. ([ParticleSystem local ->] world -> renderer local)
             Profiler.BeginSample("[UIParticleRenderer] Combine Mesh");
+            var combineStartTime = Time.realtimeSinceStartupAsDouble;
+            
             if (_parent.canSimulate)
             {
                 if (_parent.positionMode == UIParticle.PositionMode.Absolute)
@@ -437,6 +444,9 @@ namespace Coffee.UIExtensions
                 InternalListPool<Component>.Return(ref components);
             }
 
+            var combineEndTime = Time.realtimeSinceStartupAsDouble;
+            UIParticleProfiler.AddCombineMeshTime((combineEndTime - combineStartTime) * 1000.0);
+
             Profiler.EndSample();
 
             // Update animatable material properties.
@@ -446,6 +456,8 @@ namespace Coffee.UIExtensions
 
             // Get grouped renderers.
             Profiler.BeginSample("[UIParticleRenderer] Set Mesh");
+            var setMeshStartTime = Time.realtimeSinceStartupAsDouble;
+            
             var renderers = InternalListPool<UIParticleRenderer>.Rent();
             if (_parent.useMeshSharing)
             {
@@ -473,6 +485,9 @@ namespace Coffee.UIExtensions
             {
                 workerMesh.Clear();
             }
+
+            var setMeshEndTime = Time.realtimeSinceStartupAsDouble;
+            UIParticleProfiler.AddSetMeshTime((setMeshEndTime - setMeshStartTime) * 1000.0);
 
             Profiler.EndSample();
         }

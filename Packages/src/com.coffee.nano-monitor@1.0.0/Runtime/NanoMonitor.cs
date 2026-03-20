@@ -54,6 +54,34 @@ namespace Coffee.NanoMonitor
         [SerializeField]
         private MonitorUI m_CustomUITemplate;
 
+        [Header("UIParticle Profiler")]
+        [SerializeField]
+        private MonitorUI m_UIParticles;
+
+        [SerializeField]
+        private MonitorUI m_TotalParticles;
+
+        [SerializeField]
+        private MonitorUI m_Materials;
+
+        [SerializeField]
+        private MonitorUI m_CPUTimeTotal;
+
+        [SerializeField]
+        private MonitorUI m_CPUTimeBake;
+
+        [SerializeField]
+        private MonitorUI m_CPUTimeCombine;
+
+        [SerializeField]
+        private MonitorUI m_CPUTimeSetMesh;
+
+        [SerializeField]
+        private MonitorUI m_CanvasGraphics;
+
+        [SerializeField]
+        private MonitorUI m_CanvasRebatchTime;
+
         private Image.OriginVertical _anchor;
         private CustomMonitorItem[] _customMonitorItems = new CustomMonitorItem[0];
 
@@ -158,6 +186,52 @@ namespace Coffee.NanoMonitor
             if (m_UnityUsage)
             {
                 m_UnityUsage.SetText("Unity:{0,7:N3}/{1,7:N3}MB", unityUsed, unityTotal);
+            }
+
+            // 更新 UIParticle Profiler 数据
+            if (m_UIParticles)
+            {
+                m_UIParticles.SetText("UIParticles:{0,5}", Coffee.UIExtensions.UIParticleProfiler.activeUIParticleCount);
+            }
+
+            if (m_TotalParticles)
+            {
+                m_TotalParticles.SetText("Particles:{0,8:N0}", Coffee.UIExtensions.UIParticleProfiler.totalParticleCount);
+            }
+
+            if (m_Materials)
+            {
+                m_Materials.SetText("Materials:{0,5}", Coffee.UIExtensions.UIParticleProfiler.uniqueMaterialCount);
+            }
+
+            if (m_CanvasGraphics)
+            {
+                m_CanvasGraphics.SetText("Canvas Graphics:{0,6}", Coffee.UIExtensions.UIParticleProfiler.canvasGraphicCount);
+            }
+
+            if (m_CanvasRebatchTime)
+            {
+                m_CanvasRebatchTime.SetText("Rebatch(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.canvasRebatchTimeMs);
+            }
+
+            if (m_CPUTimeTotal)
+            {
+                m_CPUTimeTotal.SetText("CPU Total(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.totalTimeMs);
+            }
+
+            if (m_CPUTimeBake)
+            {
+                m_CPUTimeBake.SetText("  Bake(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.bakeMeshTimeMs);
+            }
+
+            if (m_CPUTimeCombine)
+            {
+                m_CPUTimeCombine.SetText("  Combine(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.combineMeshTimeMs);
+            }
+
+            if (m_CPUTimeSetMesh)
+            {
+                m_CPUTimeSetMesh.SetText("  SetMesh(ms):{0,7:F2}", Coffee.UIExtensions.UIParticleProfiler.setMeshTimeMs);
             }
 
             foreach (var item in _customMonitorItems)

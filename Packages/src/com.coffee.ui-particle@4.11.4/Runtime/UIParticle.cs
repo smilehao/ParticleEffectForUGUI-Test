@@ -648,6 +648,16 @@ namespace Coffee.UIExtensions
                 break;
             }
 
+            // 注册 UIParticle 数据到 Profiler
+            for (var i = 0; i < particles.Count; i++)
+            {
+                var ps = particles[i];
+                if (ps && ps.emission.enabled)
+                {
+                    UIParticleProfiler.RegisterUIParticle(this, ps);
+                }
+            }
+
             var bakeCamera = GetBakeCamera();
             for (var i = 0; i < _renderers.Count; i++)
             {
@@ -655,6 +665,18 @@ namespace Coffee.UIExtensions
                 if (!r) continue;
 
                 r.UpdateMesh(bakeCamera);
+                
+                // 注册材质到 Profiler
+                if (r.materialForRendering != null)
+                {
+                    UIParticleProfiler.RegisterMaterial(r.materialForRendering);
+                }
+            }
+            
+            // 统计 Canvas Graphic 数量
+            if (canvas != null)
+            {
+                UIParticleProfiler.CountCanvasGraphics(canvas);
             }
         }
 
