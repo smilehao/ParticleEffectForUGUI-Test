@@ -1,6 +1,8 @@
 {
     "name": "Coffee.NanoMonitor",
-    "references": [],
+    "references": [
+        "Coffee.UIParticle"
+    ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],

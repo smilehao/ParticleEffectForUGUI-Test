@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Coffee.UIExtensions;
 #if UNITY_EDITOR
 #endif
 
