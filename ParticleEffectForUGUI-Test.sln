@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffee.UIParticle.Editor", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffee.UIParticle.Demo", "Coffee.UIParticle.Demo.csproj", "{a4081ef6-dddb-40c7-eb22-d96a2d3e9c5a}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffee.NanoMonitor", "Coffee.NanoMonitor.csproj", "{ae25b6a7-157a-2939-7161-0398250bdff4}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffee.UIParticle.Editor.Tests", "Coffee.UIParticle.Editor.Tests.csproj", "{f199e6c1-7195-39fd-f743-c37b98658c2c}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffee.UIParticle.PerformanceDemo", "Coffee.UIParticle.PerformanceDemo.csproj", "{4382491d-4253-3dee-4c19-88b78ecdd97b}"
@@ -28,6 +30,8 @@ Global
 		{1d2a08a5-8496-7e69-4ce1-aed05271c681}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{a4081ef6-dddb-40c7-eb22-d96a2d3e9c5a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{a4081ef6-dddb-40c7-eb22-d96a2d3e9c5a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ae25b6a7-157a-2939-7161-0398250bdff4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ae25b6a7-157a-2939-7161-0398250bdff4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{f199e6c1-7195-39fd-f743-c37b98658c2c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{f199e6c1-7195-39fd-f743-c37b98658c2c}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4382491d-4253-3dee-4c19-88b78ecdd97b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

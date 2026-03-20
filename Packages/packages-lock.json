@@ -15,18 +15,17 @@
       "hash": "0b582a7eac23caaeebe5ade9dc519a911d8342e6"
     },
     "com.coffee.nano-monitor": {
-      "version": "https://github.com/mob-sakai/Coffee.Internal.git?path=Packages/NanoMonitor",
+      "version": "file:src/com.coffee.nano-monitor@1.0.0",
       "depth": 0,
-      "source": "git",
+      "source": "local",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
-      },
-      "hash": "0b582a7eac23caaeebe5ade9dc519a911d8342e6"
+      }
     },
     "com.coffee.ui-particle": {
-      "version": "file:src",
+      "version": "file:src/com.coffee.ui-particle@4.11.4",
       "depth": 0,
-      "source": "embedded",
+      "source": "local",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
