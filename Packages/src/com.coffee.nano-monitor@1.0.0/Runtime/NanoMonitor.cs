@@ -4,6 +4,7 @@ using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Coffee.UIExtensions;
+using System.Collections.Generic;
 #if UNITY_EDITOR
 #endif
 
@@ -83,6 +84,11 @@ namespace Coffee.NanoMonitor
         [SerializeField]
         private MonitorUI m_CanvasRebatchTime;
 
+        [SerializeField]
+        private GameObject prefabs;
+
+        private List<GameObject> gos = new List<GameObject>();
+
         private Image.OriginVertical _anchor;
         private CustomMonitorItem[] _customMonitorItems = new CustomMonitorItem[0];
 
@@ -137,20 +143,14 @@ namespace Coffee.NanoMonitor
                 m_OpenButton.transform.localScale =
                     top ? Vector3.one : new Vector3(1, -1, 1);
 
-            var canMove = 1 < SceneManager.sceneCountInBuildSettings;
-            if (m_PrevButton)
-            {
-                m_PrevButton.gameObject.SetActive(canMove);
-            }
-
-            if (m_NextButton)
-            {
-                m_NextButton.gameObject.SetActive(canMove);
-            }
-
             SetVisibleOpenObject(_isOpened);
 
             m_TargetFps.SetText("{0}", Application.targetFrameRate);
+
+            if (prefabs)
+            {
+                prefabs.SetActive(false);
+            }
 
             Profiler.EndSample();
         }
@@ -217,7 +217,7 @@ namespace Coffee.NanoMonitor
 
             if (m_CPUTimeTotal)
             {
-                m_CPUTimeTotal.SetText("Total:{0,3:F2}", Coffee.UIExtensions.UIParticleProfiler.totalTimeMs);
+                m_CPUTimeTotal.SetText("GPU Total:{0,3:F2}", Coffee.UIExtensions.UIParticleProfiler.totalTimeMs);
             }
 
             if (m_CPUTimeBake)
@@ -271,8 +271,31 @@ namespace Coffee.NanoMonitor
             SceneManager.LoadScene(next);
         }
 
+        public void MovePrefab(int add)
+        {
+        }
+
+        public void InstancePrefab()
+        {
+            if (prefabs)
+            {
+                var go = Instantiate(prefabs);
+                go.SetActive(true);
+
+                gos.Add(go);
+            }
+        }
+
         public void Clean()
         {
+            foreach (var go in gos)
+            {
+                if (go)
+                {
+                    Destroy(go);
+                }
+            }
+
             Resources.UnloadUnusedAssets();
             GC.Collect(0);
         }
